@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac744859-1b02-456f-a057-c7cd10d9bcbd" name="Default Changelist" comment="" />
+    <list default="true" id="ac744859-1b02-456f-a057-c7cd10d9bcbd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guess_my_number/lib/GuessMyNumberApp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/guess_my_number/lib/GuessMyNumberApp.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="27A46Hc58Et0OVTpiZDdlVQPztR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="settings.editor.selected.configurable" value="RemoteServers" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -38,9 +54,25 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2689" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1648749509533">
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1648753949765">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2689" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1648749509533" />
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1648753949764" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1648753949764">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1648753949764" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1648753949764">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1648753949764" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1648753949764">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1648753949764" />
+    <state x="2689" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1648763104738">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2689" y="456" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1648763104738" />
   </component>
 </project>
