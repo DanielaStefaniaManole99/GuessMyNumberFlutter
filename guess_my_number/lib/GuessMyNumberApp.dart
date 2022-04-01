@@ -23,12 +23,6 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-//genereaza un numar care se schimba cand apesi pe reset sau try again - done
-// nu mai afisa eroare daca nu ai introdus inca un numar
-//daca numarul nu e ghicit, se afiseaza you tried ... try higher/slower, daca e ghicit, se afiseaza you guessed right - done
-//buton guess -> se schimba in reset cand e ghicit - done
-//cand buton e ghicit -> Alert Window -> cu 2 butoane -> Try Again! (reseteaza tot) si OK (inchide pop ul ul si window-ul ramane la fel - done
-
 class _HomePageState extends State<HomePage> {
 
   final TextEditingController _myController = TextEditingController();
@@ -39,8 +33,6 @@ class _HomePageState extends State<HomePage> {
   bool _isVisible = false;
   bool _isGuessed = false;
   bool _popClosed= false;
-  bool _reset = false;
-  bool _tryAgain = false;
 
   //initializam numarul, punem +1 ca sa avem in range-ul 1-100
   int _randomNumber = Random().nextInt(100) + 1;
@@ -124,6 +116,7 @@ class _HomePageState extends State<HomePage> {
                       controller: _myController,
                       keyboardType: const TextInputType.numberWithOptions(),
                       validator: (String? value) {
+
                         if (value != null || value!.isEmpty) {
                           final int? result = int.tryParse(value);
 
@@ -141,11 +134,13 @@ class _HomePageState extends State<HomePage> {
                       builder: (BuildContext context) {
                         return ElevatedButton(
                           onPressed: () {
+                            //am adaugat isNotEmpty pentru a verifica daca String-ul nu este null (valid este true si pentru stringuri nule ca sa nu ne apara textul pentru eroare
                             final bool valid = Form.of(context)!.validate() && (_myController.text.isNotEmpty);
 
+                            //daca numarul introdus este valid dar inca nu este ghicit
                             if(valid && !_isGuessed){
                                 final int value = int.parse(_myController.text);
-                                print(_randomNumber);
+                                _myController.text = "";
 
                                 setState(() {
                                   _isVisible = true;
@@ -156,7 +151,10 @@ class _HomePageState extends State<HomePage> {
 
                               }
 
+                            //daca numarul a fost ghicit, se deschide AlertDialog-ul si butonul de Guess devine butonul de Reset
                               if(_isGuessed && !_popClosed){
+                                _guessButton = "Reset";
+
                                 showDialog(
                                     context: context,
                                     builder: (BuildContext context) =>
@@ -164,6 +162,7 @@ class _HomePageState extends State<HomePage> {
                                           title: Text('You guessed right'),
                                           content: Text(_itWas),
                                           actions: [
+                                            //daca apasam pe Try Again, se inchide fereastra si revenim la setarile initiale
                                             TextButton(
                                               onPressed: () {
                                                 Navigator.of(context).pop();
@@ -182,6 +181,8 @@ class _HomePageState extends State<HomePage> {
                                                 ),
                                               ),
                                             ),
+
+                                            //daca apasam pe OK, doar inchidem fereastra
                                             TextButton(
                                               onPressed: () {
                                                 Navigator.of(context).pop();
@@ -198,10 +199,9 @@ class _HomePageState extends State<HomePage> {
                                           ],
                                         )
                                 );
-
-                                _guessButton = "Reset";
                               }
 
+                            // apasam pe Reset dupa ce numarul a fost ghicit si fereastra a fost inchisa si revenim la instructiunile initiale
                             if(_isGuessed && _popClosed){
                               setState(() {
                                 _randomNumber = Random().nextInt(100) + 1;
@@ -237,6 +237,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  //functie pentru a vedea daca utilizatorul a ghicit numarul sau ii oferim hint-uri
   guessNumber(int value){
 
     if(value > _randomNumber)
@@ -245,6 +246,7 @@ class _HomePageState extends State<HomePage> {
     if(value < _randomNumber)
       return "Try higher";
 
+    //daca nu e numarul nici mai mic, nici mai mare, este ghicit
     setState(() {
       _isGuessed = true;
     });
@@ -252,5 +254,4 @@ class _HomePageState extends State<HomePage> {
     return "You guessed right.";
 
   }
-
 }
